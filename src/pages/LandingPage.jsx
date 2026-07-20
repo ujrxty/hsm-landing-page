@@ -10,6 +10,9 @@ export default function LandingPage() {
     // Add third video ID here when ready
   ]
 
+  // Testimonial images
+  const testimonialImages = Array.from({ length: 12 }, (_, i) => `/testimonials2/${i + 1}.jpeg`)
+
   // Replace with your actual Typeform ID
   const TYPEFORM_ID = 'YOUR_TYPEFORM_ID'
 
@@ -127,6 +130,15 @@ export default function LandingPage() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
+            </div>
+          ))}
+        </div>
+
+        {/* Testimonial Images */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '40px' }}>
+          {testimonialImages.map((src, i) => (
+            <div key={i} style={{ borderRadius: '8px', overflow: 'hidden' }}>
+              <img src={src} alt="" style={{ width: '100%', height: 'auto', display: 'block' }} loading="lazy" />
             </div>
           ))}
         </div>
