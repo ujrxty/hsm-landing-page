@@ -1,6 +1,6 @@
 export default function LandingPage() {
   const mainVideoId = 'z28HxuI9X-4'
-  const TYPEFORM_URL = 'https://form.typeform.com/to/SInDiF4o'
+  const TYPEFORM_URL = 'https://form.typeform.com/to/01KY08CPJNJGPKP3ENSRY45ZRM'
 
   const testimonialVideos = [
     'hvShHjz0zNw',
