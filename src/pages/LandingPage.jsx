@@ -1,6 +1,6 @@
 export default function LandingPage() {
   const mainVideoId = 'z28HxuI9X-4'
-  const TYPEFORM_URL = 'https://form.typeform.com/to/01KY08CPJNJGPKP3ENSRY45ZRM'
+  const TYPEFORM_ID = '01KY08CPJNJGPKP3ENSRY45ZRM'
 
   const testimonialVideos = [
     'hvShHjz0zNw',
@@ -8,19 +8,6 @@ export default function LandingPage() {
   ]
 
   const testimonialImages = Array.from({ length: 12 }, (_, i) => `/testimonials2/${i + 1}.jpeg`)
-
-  const buttonStyle = {
-    display: 'inline-block',
-    background: '#22c55e',
-    color: '#fff',
-    padding: '16px 40px',
-    borderRadius: '6px',
-    border: 'none',
-    cursor: 'pointer',
-    fontWeight: 700,
-    fontSize: '16px',
-    textDecoration: 'none'
-  }
 
   return (
     <div style={{ background: '#000', minHeight: '100vh', color: '#fff' }}>
@@ -49,17 +36,22 @@ export default function LandingPage() {
           />
         </div>
 
-        <a href={TYPEFORM_URL} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
-          Apply For Coaching
-        </a>
-        <p style={{ color: '#666', fontSize: '12px', marginTop: '8px' }}>Click Here To Get Started</p>
+        {/* Typeform Embed */}
+        <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '24px' }}>Apply Here:</h2>
+        <div style={{ width: '100%', height: '500px', marginBottom: '40px' }}>
+          <iframe
+            src={`https://form.typeform.com/to/${TYPEFORM_ID}`}
+            style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px' }}
+            allow="camera; microphone; autoplay; encrypted-media;"
+          />
+        </div>
       </section>
 
       <hr style={{ border: 'none', borderTop: '1px solid #222', margin: '0' }} />
 
       <section style={{ padding: '60px 20px', maxWidth: '800px', margin: '0 auto' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '28px', fontWeight: 700, marginBottom: '40px' }}>
-          Student Success Stories
+        <h2 style={{ textAlign: 'center', fontSize: '28px', fontWeight: 700, marginBottom: '40px', color: '#3b82f6' }}>
+          Check Out Our WILD Student Results
         </h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -82,13 +74,6 @@ export default function LandingPage() {
               <img src={src} alt="" style={{ width: '100%', height: 'auto', display: 'block' }} loading="lazy" />
             </div>
           ))}
-        </div>
-
-        <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <a href={TYPEFORM_URL} target="_blank" rel="noopener noreferrer" style={buttonStyle}>
-            Apply For Coaching
-          </a>
-          <p style={{ color: '#666', fontSize: '12px', marginTop: '8px' }}>Click Here To Get Started</p>
         </div>
       </section>
 
