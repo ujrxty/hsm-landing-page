@@ -1,4 +1,4 @@
-import { PopupButton } from 'react-calendly'
+import { useEffect } from 'react'
 
 export default function LandingPage() {
   const mainVideoId = 'z28HxuI9X-4'
@@ -13,7 +13,18 @@ export default function LandingPage() {
   // Testimonial images
   const testimonialImages = Array.from({ length: 12 }, (_, i) => `/testimonials2/${i + 1}.jpeg`)
 
-  const CALENDLY_URL = 'https://calendly.com/home-service-masterclass/peyton-vindasius-door-knocking-strategy-session'
+  const TYPEFORM_ID = 'SInDiF4o'
+
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = '//embed.typeform.com/next/embed.js'
+    script.async = true
+    document.body.appendChild(script)
+    return () => {
+      const existing = document.querySelector('script[src="//embed.typeform.com/next/embed.js"]')
+      if (existing) existing.remove()
+    }
+  }, [])
 
   const buttonStyle = {
     display: 'inline-block',
@@ -24,7 +35,8 @@ export default function LandingPage() {
     border: 'none',
     cursor: 'pointer',
     fontWeight: 700,
-    fontSize: '16px'
+    fontSize: '16px',
+    textDecoration: 'none'
   }
 
   return (
@@ -83,12 +95,9 @@ export default function LandingPage() {
           />
         </div>
 
-        <PopupButton
-          url={CALENDLY_URL}
-          rootElement={document.getElementById('root')}
-          text="Apply For Coaching"
-          styles={buttonStyle}
-        />
+        <a href="#apply" style={buttonStyle}>
+          Apply For Coaching
+        </a>
         <p style={{ color: '#666', fontSize: '12px', marginTop: '8px' }}>
           Click Here To Get Started
         </p>
@@ -141,17 +150,27 @@ export default function LandingPage() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <PopupButton
-            url={CALENDLY_URL}
-            rootElement={document.getElementById('root')}
-            text="Apply For Coaching"
-            styles={buttonStyle}
-          />
+          <a href="#apply" style={buttonStyle}>
+            Apply For Coaching
+          </a>
           <p style={{ color: '#666', fontSize: '12px', marginTop: '8px' }}>
             Click Here To Get Started
           </p>
         </div>
 
+      </section>
+
+      <hr style={{ border: 'none', borderTop: '1px solid #222', margin: '0' }} />
+
+      {/* Typeform */}
+      <section id="apply" style={{ padding: '60px 20px', maxWidth: '700px', margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '28px', fontWeight: 700, marginBottom: '40px' }}>
+          Apply Now
+        </h2>
+        <div
+          data-tf-live={TYPEFORM_ID}
+          style={{ width: '100%', height: '500px' }}
+        />
       </section>
 
       {/* Footer */}
