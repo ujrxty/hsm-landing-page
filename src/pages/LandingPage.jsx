@@ -1,6 +1,16 @@
+import { useEffect } from 'react'
+
 export default function LandingPage() {
   const mainVideoId = 'z28HxuI9X-4'
   const TYPEFORM_ID = '01KY08CPJNJGPKP3ENSRY45ZRM'
+
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = '//embed.typeform.com/next/embed.js'
+    script.async = true
+    document.body.appendChild(script)
+    return () => document.body.removeChild(script)
+  }, [])
 
   const testimonialVideos = [
     'hvShHjz0zNw',
@@ -39,11 +49,7 @@ export default function LandingPage() {
         {/* Typeform Embed */}
         <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '24px' }}>Apply Here:</h2>
         <div style={{ width: '100%', height: '500px', marginBottom: '40px' }}>
-          <iframe
-            src={`https://form.typeform.com/to/${TYPEFORM_ID}`}
-            style={{ width: '100%', height: '100%', border: 'none', borderRadius: '8px' }}
-            allow="camera; microphone; autoplay; encrypted-media;"
-          />
+          <div data-tf-live={TYPEFORM_ID} style={{ width: '100%', height: '100%' }}></div>
         </div>
       </section>
 
