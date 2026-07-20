@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-
 export default function LandingPage() {
   const mainVideoId = 'z28HxuI9X-4'
 
@@ -13,16 +11,7 @@ export default function LandingPage() {
   // Testimonial images
   const testimonialImages = Array.from({ length: 12 }, (_, i) => `/testimonials2/${i + 1}.jpeg`)
 
-  // Replace with your actual Typeform ID
-  const TYPEFORM_ID = 'YOUR_TYPEFORM_ID'
-
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.src = '//embed.typeform.com/next/embed.js'
-    script.async = true
-    document.body.appendChild(script)
-    return () => document.body.removeChild(script)
-  }, [])
+  const CALENDLY_URL = 'https://calendly.com/home-service-masterclass/peyton-vindasius-door-knocking-strategy-session'
 
   return (
     <div style={{ background: '#000', minHeight: '100vh', color: '#fff' }}>
@@ -80,7 +69,7 @@ export default function LandingPage() {
           />
         </div>
 
-        <a href="#apply" style={{
+        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style={{
           display: 'inline-block',
           background: '#22c55e',
           color: '#fff',
@@ -144,7 +133,7 @@ export default function LandingPage() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <a href="#apply" style={{
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style={{
             display: 'inline-block',
             background: '#22c55e',
             color: '#fff',
@@ -161,16 +150,6 @@ export default function LandingPage() {
           </p>
         </div>
 
-      </section>
-
-      <hr style={{ border: 'none', borderTop: '1px solid #222', margin: '0' }} />
-
-      {/* Typeform */}
-      <section id="apply" style={{ padding: '60px 20px', maxWidth: '700px', margin: '0 auto' }}>
-        <div
-          data-tf-live={TYPEFORM_ID}
-          style={{ width: '100%', height: '500px' }}
-        />
       </section>
 
       {/* Footer */}
