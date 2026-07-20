@@ -167,9 +167,15 @@ export default function LandingPage() {
         <h2 style={{ textAlign: 'center', fontSize: '28px', fontWeight: 700, marginBottom: '40px' }}>
           Apply Now
         </h2>
-        <div
-          data-tf-live={TYPEFORM_ID}
-          style={{ width: '100%', height: '500px' }}
+        <iframe
+          src={`https://form.typeform.com/to/${TYPEFORM_ID}?typeform-medium=embed-snippet`}
+          style={{
+            width: '100%',
+            height: '600px',
+            border: 'none',
+            borderRadius: '8px'
+          }}
+          title="Application Form"
         />
       </section>
 
