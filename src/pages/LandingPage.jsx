@@ -1,3 +1,5 @@
+import { PopupButton } from 'react-calendly'
+
 export default function LandingPage() {
   const mainVideoId = 'z28HxuI9X-4'
 
@@ -12,6 +14,18 @@ export default function LandingPage() {
   const testimonialImages = Array.from({ length: 12 }, (_, i) => `/testimonials2/${i + 1}.jpeg`)
 
   const CALENDLY_URL = 'https://calendly.com/home-service-masterclass/peyton-vindasius-door-knocking-strategy-session'
+
+  const buttonStyle = {
+    display: 'inline-block',
+    background: '#22c55e',
+    color: '#fff',
+    padding: '16px 40px',
+    borderRadius: '6px',
+    border: 'none',
+    cursor: 'pointer',
+    fontWeight: 700,
+    fontSize: '16px'
+  }
 
   return (
     <div style={{ background: '#000', minHeight: '100vh', color: '#fff' }}>
@@ -69,18 +83,12 @@ export default function LandingPage() {
           />
         </div>
 
-        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style={{
-          display: 'inline-block',
-          background: '#22c55e',
-          color: '#fff',
-          padding: '16px 40px',
-          borderRadius: '6px',
-          textDecoration: 'none',
-          fontWeight: 700,
-          fontSize: '16px'
-        }}>
-          Apply For Coaching
-        </a>
+        <PopupButton
+          url={CALENDLY_URL}
+          rootElement={document.getElementById('root')}
+          text="Apply For Coaching"
+          styles={buttonStyle}
+        />
         <p style={{ color: '#666', fontSize: '12px', marginTop: '8px' }}>
           Click Here To Get Started
         </p>
@@ -133,18 +141,12 @@ export default function LandingPage() {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style={{
-            display: 'inline-block',
-            background: '#22c55e',
-            color: '#fff',
-            padding: '16px 40px',
-            borderRadius: '6px',
-            textDecoration: 'none',
-            fontWeight: 700,
-            fontSize: '16px'
-          }}>
-            Apply For Coaching
-          </a>
+          <PopupButton
+            url={CALENDLY_URL}
+            rootElement={document.getElementById('root')}
+            text="Apply For Coaching"
+            styles={buttonStyle}
+          />
           <p style={{ color: '#666', fontSize: '12px', marginTop: '8px' }}>
             Click Here To Get Started
           </p>
